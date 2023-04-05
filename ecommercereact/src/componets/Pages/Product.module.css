@@ -1,0 +1,49 @@
+.bckgrd{
+    background-color: #8ab4a3;
+}
+.info-short {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-evenly;
+    text-align: center;
+    padding-bottom: 50px;
+  }
+  .info-short img {
+    width: auto;
+    height: auto;
+  
+    max-height: 96px;
+    max-width: 160px;
+  }
+  
+  .info-short .option {
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    background: seagreen;
+  }
+  
+  
+  .info-short ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 4px 8px;
+    position: relative;
+    max-width: 400px;
+    min-width: 400px;
+  
+  }
+
+  .grid{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .search{
+    display: flex;
+    justify-content: center;
+  }

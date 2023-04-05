@@ -1,0 +1,23 @@
+.slideshow img{
+    width: 45vw;
+    height: 45vh;
+    margin-left: 10%;
+    margin-right: 10%;
+
+    /* add a media query for smaller screens */
+    @media only screen and (max-width: 768px) {
+    max-height: 300px; /* reduce the max-height for smaller screens */
+  }
+  
+  }
+
+  .slideshow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+
+  
