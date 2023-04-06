@@ -60,8 +60,10 @@ nav{
   
   .nav-links ul li p {
     color: white;
-    text-decoration: none;
+    text-decoration: underline;
     font-size: 20px;
+    list-style: none;
+    border-bottom: 1px transparent
   }
   
   nav img {
