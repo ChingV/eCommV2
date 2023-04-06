@@ -6,8 +6,9 @@ function SlideShow (){
 
   const images = [
     "/images/big island.jpg",
-    "/images/angel island.jpg",
-    "/images/rabbit island.jpg"
+    "/images/pumkin key.jpg",
+    "/images/carolina cays.jpg",
+    "/images/gillis island.jpg"
   ];
 
    useEffect(() => {

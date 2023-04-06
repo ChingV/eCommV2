@@ -1,13 +1,14 @@
 import React, {useRef, useState,useEffect} from "react";
 import ProductsArray from './ProductsArray'
+import Slider from "@mui/material/Slider";
 import classes from '../Pages/Product.module.css'
 
 
 const ProductCards=()=>{
     const [searchTerm, setSearchTerm] = useState('');
-    const [minPrice, setMinPrice] = useState('');
-    const [maxPrice, setMaxPrice] = useState(100000000);
+    const [price, setPrice] = useState([100000,100000000])
     const [product,setProduct] = useState([]);
+    const checkPrice = 100000000;
 
     useEffect(() => {
         setProduct(ProductsArray);
@@ -17,20 +18,16 @@ const ProductCards=()=>{
     const handleNameChange = (e) => {
         setSearchTerm(e.target.value);
       };
-    
-      const handleMinPriceChange = (e) => {
-        setMinPrice(e.target.value);
-      };
-    
-      const handleMaxPriceChange = (e) => {
-        setMaxPrice(e.target.value);
-      };
-    
+
+      function handlePrice(event, newValue) {
+        setPrice(newValue);
+     }
       const filteredData = product.filter(
         (item) =>
           item.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
-          item.price >= minPrice &&
-          item.price <= maxPrice
+          item.price >= price[0] &&
+          item.price <= price[1] ||
+          (price[1] == 1500000 && item.price >= 1500000)
       );
     return(
         <div>
@@ -41,18 +38,9 @@ const ProductCards=()=>{
             value={searchTerm}
             onChange={handleNameChange}
           />
-          <input
-            type="number"
-            placeholder="Min price"
-            value={minPrice}
-            onChange={handleMinPriceChange}
-          />
-          <input
-            type="number"
-            placeholder="Max price"
-            value={maxPrice}
-            onChange={handleMaxPriceChange}
-          />
+        <div>
+        <Slider value = {price} min={100000} max={1500000}  onChange = {handlePrice} valueLabelDisplay="auto" style = {{ width: "15rem", padding: "20px" }}/>
+          </div>
           </div>
         <div className={classes['grid']}>
             {filteredData.map((item)=>(

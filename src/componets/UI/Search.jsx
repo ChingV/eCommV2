@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from "react";
+import Slider from "@mui/material/Slider";
 import classes from '../Pages/Product.module.css'
 
 function Search(){
     const [searchTerm, setSearchTerm] = useState('');
-    const [minPrice, setMinPrice] = useState('');
-    const [maxPrice, setMaxPrice] = useState(100000000);
+    // const [minPrice, setMinPrice] = useState('');
+    // const [maxPrice, setMaxPrice] = useState(100000000);
+    const [price, setPrice] = useState([100000,100000000])
     const [product,setProduct] = useState([]);
 
     useEffect(()=>{
@@ -26,19 +28,23 @@ const handleNameChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  const handleMinPriceChange = (e) => {
-    setMinPrice(e.target.value);
-  };
+  function handlePrice(event, newValue) {
+    setPrice(newValue);
+ }
 
-  const handleMaxPriceChange = (e) => {
-    setMaxPrice(e.target.value);
-  };
+  // const handleMinPriceChange = (e) => {
+  //   setMinPrice(e.target.value);
+  // };
+
+  // const handleMaxPriceChange = (e) => {
+  //   setMaxPrice(e.target.value);
+  // };
 
   const filteredData = product.filter(
     (item) =>
       item.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
-      item.price >= minPrice &&
-      item.price <= maxPrice
+      item.price >= price[0] &&
+      item.price <= price[1]
   );
 return(
     <div>
@@ -49,7 +55,7 @@ return(
         value={searchTerm}
         onChange={handleNameChange}
       />
-      <input
+      {/* <input
         type="number"
         placeholder="Min price"
         value={minPrice}
@@ -60,7 +66,8 @@ return(
         placeholder="Max price"
         value={maxPrice}
         onChange={handleMaxPriceChange}
-      />
+      /> */}
+      <Slider value = {price} onChange = {handlePrice} valueLabelDisplay="auto"/>
       </div>
     <div className={classes['grid']}>
         {filteredData.map((item)=>(
