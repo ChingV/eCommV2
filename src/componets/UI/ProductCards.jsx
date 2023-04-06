@@ -8,7 +8,6 @@ const ProductCards=()=>{
     const [searchTerm, setSearchTerm] = useState('');
     const [price, setPrice] = useState([100000,100000000])
     const [product,setProduct] = useState([]);
-    const checkPrice = 100000000;
 
     useEffect(() => {
         setProduct(ProductsArray);
