@@ -21,6 +21,10 @@ function SlideShow (){
 
   return (
     <div className={classes['slideshow']}>
+      <h1>Welcome</h1>
+          <p>Evening island meal<br></br>
+          Summer visits us again<br></br>
+          Along with old friends</p>
       <img src={images[imageIndex]} alt={`SlideShow ${imageIndex}`} />
     </div>
   );

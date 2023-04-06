@@ -13,13 +13,16 @@
 
   .slideshow {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: #8ab4a3;
+  }
+  .slideshow p{
+    font-style: italic;
   }
   
 
