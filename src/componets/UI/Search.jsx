@@ -7,9 +7,9 @@ function Search(){
   const [price, setPrice] = useState([100000,100000000])
   const [product,setProduct] = useState([]);
 
-    useEffect(()=>{
-        callSql();
-    },[])
+  useEffect(()=>{
+      callSql();
+  },[])
 
 
 const callSql= async()=>{

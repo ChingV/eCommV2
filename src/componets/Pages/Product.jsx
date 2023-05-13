@@ -6,8 +6,8 @@ import classes from './Product.module.css'
 function Product(){
     return(
         <div className={classes['bckgrd']}>
-      {/* <Search/> */}
-      <ProductCards/>
+      <Search/>
+      {/* <ProductCards/> */}
 
       </div>
     )
